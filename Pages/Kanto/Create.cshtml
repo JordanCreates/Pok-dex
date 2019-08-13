@@ -1,0 +1,49 @@
+﻿@page
+@model Pokédex.Pages.Kanto.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Pokémon</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Pokémon.DexNumber" class="control-label"></label>
+                <input asp-for="Pokémon.DexNumber" class="form-control" />
+                <span asp-validation-for="Pokémon.DexNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pokémon.Name" class="control-label"></label>
+                <input asp-for="Pokémon.Name" class="form-control" />
+                <span asp-validation-for="Pokémon.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pokémon.Type1" class="control-label"></label>
+                <input asp-for="Pokémon.Type1" class="form-control" />
+                <span asp-validation-for="Pokémon.Type1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pokémon.Type2" class="control-label"></label>
+                <input asp-for="Pokémon.Type2" class="form-control" />
+                <span asp-validation-for="Pokémon.Type2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

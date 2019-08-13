@@ -1,0 +1,79 @@
+﻿@page
+@model Pokédex.Pages.Kanto.IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    Random random = new Random();
+    var randomNumber = random.Next(1, 70);
+
+    var dexno = randomNumber;
+    var image = "/images/pokemon (" + dexno + ").png";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Pokémon of the Day</h1>
+</div>
+
+<div class="text-center">
+
+    @foreach (var item in Model.Pokémon)
+    {
+        if (item.DexNumber == @randomNumber)
+        {
+            <a asp-page="/kanto/Details" asp-route-id="@item.ID"><h2>@Html.DisplayFor(modelItem => item.Name)</h2></a>
+            <img src="@image" style="width:200px" />
+
+        }
+    }
+</div>
+
+<!--
+<div class="text-center">
+    @foreach (var item in Model.Pokémon)
+    {
+        if (item.Type1 == "Poison")
+        {
+            <h2>@Html.DisplayFor(modelItem => item.Name)</h2>
+
+        }
+        if (item.Type2 == "Poison")
+        {
+            <h2>@Html.DisplayFor(modelItem => item.Name)</h2>
+
+        }
+    }
+</div>
+-->
+
+<div class="text-center dexlink">
+    <h1 class="display-4">Regions</h1>
+</div>
+
+<div class="row text-center dexlink">
+    <div class="col-lg-3">
+        <a href="/kanto">Kanto</a>
+    </div>
+    <div class="col-lg-3">
+        <a href="/johto">Johto</a>
+    </div>
+    <div class="col-lg-3">
+        <a href="/hoenn">Hoenn</a>
+    </div>
+    <div class="col-lg-3">
+        <a href="/sinnoh">Sinnoh</a>
+    </div>
+</div>
+
+<div class="row text-center dexlink">
+    <div class="col-lg-3">
+        <a href="/unova">Unova</a>
+    </div>
+    <div class="col-lg-3">
+        <a href="/kalos">Kalos</a>
+    </div>
+    <div class="col-lg-3">
+        <a href="/alola">Alola</a>
+    </div>
+    <div class="col-lg-3">
+        <a href="/galar">Galar</a>
+    </div>
+</div>
