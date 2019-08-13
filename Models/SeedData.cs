@@ -32,8 +32,19 @@ namespace Pokédex.Models
                     new Pokémon
                     {
                         DexNumber = 2,
-                        Name = "Charmander",
-                        Type1 = "Fire"
+                        Name = "Ivysaur",
+                        Type1 = "Grass",
+                        Type2 = "Poison",
+                        RedBlue = "When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs."
+                    },
+
+                    new Pokémon
+                    {
+                        DexNumber = 3,
+                        Name = "Venusaur",
+                        Type1 = "Grass",
+                        Type2 = "Poison",
+                        RedBlue = "The plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight."
                     }
                 );
                 context.SaveChanges();
