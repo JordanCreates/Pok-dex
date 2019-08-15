@@ -6,59 +6,107 @@
     var dexno = Model.Pokémon.DexNumber;
     var image = "/images/pokemon (" + dexno + ").png";
 }
+    <div>
+        <h1>#@Html.DisplayFor(model => model.Pokémon.DexNumber) - @Html.DisplayFor(model => model.Pokémon.Name)</h1>
 
-<div class="container-fluid">
-<div class="col-lg-10">
-<h1>#@Html.DisplayFor(model => model.Pokémon.DexNumber) - @Html.DisplayFor(model => model.Pokémon.Name)</h1>
+        <img src="@image" style="width:200px" />
 
-<img src="@image" style="width:200px" />
+        <h4>About</h4>
 
-<h4>About</h4>
-
-<div>
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Pokémon.DexNumber)
-        </dt>
-        <dd class="col-sm-10 text-left">
-            @Html.DisplayFor(model => model.Pokémon.DexNumber)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Pokémon.Name)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Pokémon.Name)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Pokémon.Type1)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Pokémon.Type1)
-        </dd>
-        @{if (Model.Pokémon.Type2 != null)
-            {
+        <div>
+            <dl class="row">
                 <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => model.Pokémon.Type2)
+                    @Html.DisplayNameFor(model => model.Pokémon.DexNumber)
+                </dt>
+                <dd class="col-sm-10 text-left">
+                    @Html.DisplayFor(model => model.Pokémon.DexNumber)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Pokémon.Name)
                 </dt>
                 <dd class="col-sm-10">
-                    @Html.DisplayFor(model => model.Pokémon.Type2)
+                    @Html.DisplayFor(model => model.Pokémon.Name)
                 </dd>
-            }
-        }
-    </dl>
-    <h4>Pokédex Entries</h4>
-    <dl class="row">
-        <dt class="col-sm-2">
-            Red / Blue:
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Pokémon.RedBlue)
-        </dd>
-    </dl>
-</div>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Pokémon.Type1)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Pokémon.Type1)
+                </dd>
+                @{if (Model.Pokémon.Type2 != null)
+                    {
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Pokémon.Type2)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Pokémon.Type2)
+                        </dd>
+                    }
+                }
+            </dl>
+        </div>
 
-</div>
-</div>
+    </div>
+    <div>
+        <h4>Stats</h4>
+
+        <div>
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Pokémon.HP)
+                </dt>
+                <dd class="col-sm-10 text-left">
+                    @Html.DisplayFor(model => model.Pokémon.HP)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Pokémon.Attack)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Pokémon.Attack)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Pokémon.Defense)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Pokémon.Defense)
+                </dd>
+                <dt class="col-sm-2">
+                    Special Attack
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Pokémon.SpecialAttack)
+                </dd>
+                <dt class="col-sm-2">
+                    Special Defense
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Pokémon.SpecialDefense)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Pokémon.Speed)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Pokémon.Speed)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Pokémon.Total)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Pokémon.Total)
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+<h4>Pokédex Entries</h4>
+<dl class="row">
+    <dt class="col-sm-2">
+        Red / Blue:
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Pokémon.RedBlue)
+    </dd>
+</dl>
 
 <div class="text-center col-lg-2">
     <a asp-page="./Index">Back to Kanto Pokédex</a>

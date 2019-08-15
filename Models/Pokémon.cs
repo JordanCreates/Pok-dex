@@ -19,5 +19,18 @@ namespace Pokédex.Models
 
         public string RedBlue { get; set; }
 
+        public string HP { get; set; }
+
+        public string Attack { get; set; }
+
+        public string Defense { get; set; }
+
+        public string SpecialAttack { get; set; }
+
+        public string SpecialDefense { get; set; }
+
+        public string Speed { get; set; }
+
+        public string Total { get; set; }
     }
 }

@@ -13,10 +13,9 @@ namespace Pokédex.Models
                 serviceProvider.GetRequiredService<
                     DbContextOptions<PokédexContext>>()))
             {
-                // Look for any movies.
                 if (context.Pokémon.Any())
                 {
-                    return;   // DB has been seeded
+                    return;
                 }
 
                 context.Pokémon.AddRange(
