@@ -6,19 +6,18 @@
     var dexno = Model.Pokémon.DexNumber;
     var image = "/images/pokemon (" + dexno + ").png";
 }
+
+<div>
     <div>
         <h1>#@Html.DisplayFor(model => model.Pokémon.DexNumber) - @Html.DisplayFor(model => model.Pokémon.Name)</h1>
-
         <img src="@image" style="width:200px" />
-
+    </div>
         <h4>About</h4>
-
-        <div>
             <dl class="row">
                 <dt class="col-sm-2">
                     @Html.DisplayNameFor(model => model.Pokémon.DexNumber)
                 </dt>
-                <dd class="col-sm-10 text-left">
+                <dd class="col-sm-10">
                     @Html.DisplayFor(model => model.Pokémon.DexNumber)
                 </dd>
                 <dt class="col-sm-2">
@@ -46,13 +45,11 @@
             </dl>
         </div>
 
-    </div>
+<div>
+    <h4>Stats</h4>
     <div>
-        <h4>Stats</h4>
-
-        <div>
-            <dl class="row">
-                <dt class="col-sm-2">
+        <dl class="row">
+            <dt class="col-sm-2">
                     @Html.DisplayNameFor(model => model.Pokémon.HP)
                 </dt>
                 <dd class="col-sm-10 text-left">
@@ -71,13 +68,13 @@
                     @Html.DisplayFor(model => model.Pokémon.Defense)
                 </dd>
                 <dt class="col-sm-2">
-                    Special Attack
+                    @Html.DisplayNameFor(model => model.Pokémon.SpecialAttack)
                 </dt>
                 <dd class="col-sm-10">
                     @Html.DisplayFor(model => model.Pokémon.SpecialAttack)
                 </dd>
                 <dt class="col-sm-2">
-                    Special Defense
+                    @Html.DisplayNameFor(model => model.Pokémon.SpecialDefense)
                 </dt>
                 <dd class="col-sm-10">
                     @Html.DisplayFor(model => model.Pokémon.SpecialDefense)
@@ -93,10 +90,10 @@
                 </dt>
                 <dd class="col-sm-10">
                     @Html.DisplayFor(model => model.Pokémon.Total)
-                </dd>
-            </dl>
-        </div>
+            </dd>
+        </dl>
     </div>
+</div>
 
 <h4>Pokédex Entries</h4>
 <dl class="row">

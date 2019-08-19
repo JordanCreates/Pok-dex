@@ -1,1 +1,81 @@
-﻿
+﻿@page
+@model Pokédex.Pages.Kanto.IndexModel
+
+
+@{
+    ViewData["Title"] = "Index";
+    var number = 1;
+}
+
+<h1 style="text-align:center;">Kanto Pokédex</h1>
+
+<table class="text-center" style="margin: 0 auto;">
+    <thead>
+        <tr style="border-bottom: 2px solid red">
+            <th style="width: 75px">
+
+            </th>
+            <th style="width: 100px">
+                HP
+            </th>
+            <th style="width: 100px">
+                Attack
+            </th>
+            <th style="width: 100px">
+                Defense
+            </th>
+            <th>
+                Special Attack
+            </th>
+            <th>
+                Special Defense
+            </th>
+            <th>
+                Speed
+            </th>
+            <th>
+               Total
+            </th>
+        </tr>
+    </thead>
+    <tbody class="tablerows">
+        @foreach (var item in Model.Pokémon)
+        {
+        <tr>
+
+            <td>
+                @{
+                    var spritepath = "/images/sprites/sprite" + number + ".png";
+                    number = number + 1;
+                }
+                <img src="@spritepath" />
+
+            </td>
+
+
+            <td>
+                <a asp-page="./Details" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.HP)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Attack)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Defense)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialAttack)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialDefense)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Speed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+        </tr>
+
+        }
+    </tbody>
+</table>
